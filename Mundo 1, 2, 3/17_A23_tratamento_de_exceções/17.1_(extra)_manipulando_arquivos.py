@@ -56,9 +56,10 @@ finally:
     print('\nAté logo!')
 
 # IMPORTANTE (Dica sobre posição de cursor)
-''' Após utilizar qualquer metodo de leitura ou escrita, o cursor se movimenta para a posição definida no parâmetro, no caso de um metodo de leitura, ou
-para o fim do arquivo, caso seja um metodo de escrita ou um metodo de leitura sem um parâmetro definido, ou seja, caso você queira fazer 
-novas consultas do começo do arquivo, utilize o método 'obj.seek(0)' para que o cursor volte para o início. '''
+''' Após utilizar qualquer método de leitura ou escrita, o cursor se move para uma posição específica no arquivo, exemplos:
+Modo leitura: O cursor começa no início do arquivo, indo para o fim do arquivo quando ocorrer uma leitura com o método 'obj.read()'.
+Modo escrita: O cursor começa no fim do arquivo.
+Para voltar com o cursor para o início do arquivo, usa-se o método 'obj.seek(0)'. '''
 
 # Removendo arquivos
 from os import remove

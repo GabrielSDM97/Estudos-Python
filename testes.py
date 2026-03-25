@@ -9,7 +9,24 @@
         print('Teste ABCDE')
 print('ABC')'''
 
+def func1(n):
+    global num
+    num = 5
+    print(n)
+
+def func2():
+    global num
+    num = 3
+    print(num)
+    func1(num)
+    print(num)
+
+func2()
 
 teste = 'abc dbc; abc'
 
 print(teste.split(';'))
+
+l = [2,4,6,8,10,12]
+
+print(sum(n for n in l[2:5:2]))
