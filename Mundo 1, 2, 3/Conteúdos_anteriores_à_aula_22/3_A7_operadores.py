@@ -3,10 +3,10 @@
 A + B : Adição
 A - B : Subtração
 A * B : Multiplicação
-A / B : Divisão
 A ** B ou pow(A,B) : Potênciação
-A // B : Divisão inteira (sem utilizar vírgula no quociente)
-A % B : Resto de divisão (sem utilizar vírgula no quociente)
+A / B : Divisão real (quociente real completo)
+A // B : Divisão inteira (parte inteira do quociente)
+A % B : Resto de divisão (apenas o resto antes de inserir vírgula no quociente)
 
 Raiz quadrada e cúbica
 

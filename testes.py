@@ -30,3 +30,5 @@ print(teste.split(';'))
 l = [2,4,6,8,10,12]
 
 print(sum(n for n in l[2:5:2]))
+
+print(f"| {-5/2} {-5//2} | {5/2} {5//2} |")
