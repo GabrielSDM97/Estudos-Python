@@ -1,5 +1,0 @@
-Gabriel;49
-José;10
-Maria;40
-Emmerson;32
-Roberto Marinho;934

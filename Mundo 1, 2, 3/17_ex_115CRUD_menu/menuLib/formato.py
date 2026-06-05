@@ -11,4 +11,4 @@ def hudMenuOpções():
     print('\033[m'+20*'~~')
 
 
-opçõesdesc = ['Ver pessoas cadastradas', 'Cadastrar nova pessoa', 'Sair do sistema']
+opçõesdesc = ['Cadastrar nova pessoa', 'Ver pessoas cadastradas', 'Atualizar um cadastro', 'Remover um cadastro', 'Sair do sistema']
