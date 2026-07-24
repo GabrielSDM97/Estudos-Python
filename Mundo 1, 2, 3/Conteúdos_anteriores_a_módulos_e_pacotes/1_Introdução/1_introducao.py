@@ -1,8 +1,10 @@
 # Introdução
 
 # Aspas simples (recomendado) ou duplas são utilizada para imprimirem strings (número, caracteres, letras, etc.)
-print('1' + '2')  # O operador aritmético "+" aqui concatena as strings.
-print('1', '2')  # A vírgula concatena adicionando um espaço entre as strings.
+print('1' + '2')  # O operador aritmético "+" aqui concatena as strings "grudando-as".
+print('1' '2') # Aqui os valores ficam grudados também.
+print('1', '2')  # Já a vírgula concatena adicionando um espaço entre as strings.
+
 
 # Já para cálculos, não é utilizado aspas.
 # O operador "+" aqui soma os valores.

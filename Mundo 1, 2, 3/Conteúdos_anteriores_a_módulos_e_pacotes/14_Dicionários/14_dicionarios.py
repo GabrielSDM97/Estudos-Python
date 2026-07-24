@@ -62,13 +62,12 @@ print(f'6. {cadastro} --- {nome}')
 # Sem utilizar o '.copy()' o último valor inserido se repetirá 3 vezes dentro da lista, já que se torna uma referência e não uma cópia.
 
 
-
 ## Organizando um dicionário ##
 
 dicionário = {'A': 1, 'B': 5, 'C': 2, 'D': 4, 'E': 3}
 
 ''' A função 'sorted()', além de sortear, transforma um dicionário e suas chaves em uma lista com tuplas.
-Para organizar essas tuplas, utiliza-se a função anônima 'lambda x: x[pos]' no parâmetro 'key='(regras de organização) dentro da função 'sorted()'.
+Para organizar essas tuplas, utilizei a função anônima lambda. Para mais detalhes, veja a aula "4_sorted.py" e "5_lambda.py".
 Abaixo configurei para que a organização ocorresse baseada no tipo de valor da posição 1 das tuplas da lista 'dicionário', ou seja, baseada em ordem numérica. '''
 organizado = sorted(dicionário.items(), key=lambda posição: posição[1], reverse=True)
 
@@ -84,3 +83,16 @@ from operator import itemgetter
 organizado = sorted(dicionário.items(), key=itemgetter(1), reverse=True)'''  # Pegando o item na posição 1 do dicionário.'''
 
 # Um dicionário dentro de uma função 'sorted()' passa a ser uma lista, as chaves passam a ser tuplas e os valores, elementos das tuplas.
+
+
+# Ao utilizar o método join em um dicionário, por padrão, as CHAVES são transformadas em string, não os VALORES.
+nomeCompleto = {"Nome": "Roberto", "Sobrenome": "Silva"}
+string = " ".join(nomeCompleto)
+print(string)
+
+# Para que os VALORES sejam transformados em string, é necessário utilizar o método ".values()".
+nomeCompleto = {"Nome": "Roberto", "Sobrenome": "Silva"}
+separador = " "
+string = separador.join(nomeCompleto.values())
+print(string)
+

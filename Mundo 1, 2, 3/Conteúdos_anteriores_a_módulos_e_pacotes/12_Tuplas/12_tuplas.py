@@ -39,9 +39,9 @@ B = (4,3,2,1)
 C = B+A # Ele cria um nova tupla com todos os números das tuplas inseridas e na ordem que foram inseridas.
 
 print('\n',C)
-# Index funciona semelhantemente à 'variável.find('X')', só que para números.
-print(f'\n Pos 2 da tupla: {C.index(2)}') 
-print(f'\n Posição do 1º valor 2 na tupla a partir da pos 3: {C.index(2, 3)}')
+# Index funciona semelhantemente à 'string.find('X')', só que para números.
+print(f'\nValor da posição 3 da tupla C: {C.index(3)}') 
+print(f'\nPosição do 1º valor 2 na tupla a partir da pos 3: {C.index(2, 3)}\n')
 
 # Em Python é possível colocar tanto string quanto números em uma só tupla, diferentemente de outras linguagens de programação.
 pessoa = ('José', 39, 'Casado', 1.75, 'Marceneiro')
@@ -52,7 +52,7 @@ print(pessoa)
 del(pessoa)
 # print(pessoa) - Retornaria um erro já que a tupla 'pessoa' foi removida.
 
-print(f'{sorted(lanche)}') # Não altera a tupla, apenas organiza em ordem alfabética quando aparece no terminal.
+print(f'{sorted(lanche)}') # Não altera a tupla. Por padrão, organiza em ordem alfabética.
 print(f'{sorted(lanche, reverse=True)}') # Organiza na ordem inversa. (parâmetro 'reverse=True' serve para isso.)
 
 print()
@@ -62,9 +62,23 @@ add = (1,2,3,4,5)
 print(sum(add))
 
 # Operadores de alinhamento
-
 a = (1,2,3)
 b = 1
 
 print(f'{str(a):20}') # Para alinhar uma lista/tupla/dicionário, deve-se transformar a variável em uma string utilizando 'str()'.
 print(f'{(b):20}') # Já para valores numéricos ou string, não é necessário utilizar 'str()'.
+
+# Utilizando o método `separador.join(iterável)` para juntar índices de uma tupla em uma nova variável.
+# O separador de join deve ser sempre uma string.
+nomeCompleto = ("Roberto", "Silva")
+string = " ".join(nomeCompleto)
+print(string)
+
+# Utilizando uma variável de string como separador de join.
+número = ("Olá", "Mundo!")
+separador = ", "
+string = separador.join(número)
+print(string)
+
+# O método join pode ser utilizado da mesma forma com listas. 
+# Já com dicionários existe uma pequena diferença que será tratada na aula sobre dicionários.

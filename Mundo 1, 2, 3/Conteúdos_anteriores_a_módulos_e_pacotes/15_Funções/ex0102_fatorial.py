@@ -3,7 +3,7 @@ o primeiro que indique o número a calcular e outro chamado show, que será um v
 
 def fatorial(num, show=False):
     """
-    -> Calcula fatorial de um número.
+    Calcula fatorial de um número.
     -- Parâmetros --
     num : número que sera calculado.
     show=False : Mostra ou não o processo do cálculo na tela. True = Aparece o cálculo e resultado, False = Apenas o resultado.

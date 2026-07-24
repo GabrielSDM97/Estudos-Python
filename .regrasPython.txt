@@ -1,0 +1,6 @@
+Para saber todas as regras e recomendações de escrita correta de código, docstrings, e etc., 
+acesse o link abaixo.
+
+https://peps.python.org/ 
+
+PEP = Python Enhancement Proposals 
