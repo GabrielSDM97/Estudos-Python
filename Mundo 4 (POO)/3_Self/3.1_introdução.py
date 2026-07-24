@@ -37,6 +37,10 @@ class MinhaClasse:
         return f"O {MinhaClasse.especie} {self.nome} tem {self.idade} anos!"
         #         self.__class__.especie
 
+    def metodo_teste():
+        # Quando é executado, nada acontece, porém evita erros em estruturas que não podem ficar vazias.
+        pass # "pass" é usado como placeholder para códigos futuros.
+
 
 # Para alterar um atributo de classe, é necessário chamá-lo através do nome da classe em si, não de um objeto,
 # ou seja, tal atributo pode ser alterado antes mesmo da declaração de um objeto, já que dependende apenas da classe,

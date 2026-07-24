@@ -10,39 +10,39 @@ install()
 
 class Caneta:
     
-    def __init__(self, cor=" "):
-        self.cor = "blue" if cor == "azul" else "yellow" if cor == "amarelo" else "white"
+    def __init__(self, cor="azul"):
+        self.cor = "red" if cor == "vermelho" else "yellow" if cor == "amarelo" else "green" if cor == "verde" else "azul"
+        self.destampada = False
+
+    def tampar(self):
         self.destampada = False
 
     def destampar(self):
-        if (self.destampada == False):
-            print(f"[{self.cor}]Caneta[/] pronta para uso!\n")
-        else:
-            print(f"[{self.cor}]Caneta[/] já está destampada!\n")
         self.destampada = True
 
     def escrever(self, conteudo=" "):
-        print(f"Destampe a [{self.cor}]caneta[/] primeiro!\n") if self.destampada == False else print(
-              f"[{self.cor}]{conteudo}[/]", end=" ")
+        destamparAviso = f"\nDestampe a [{self.cor}]caneta[/] primeiro!\n"
+        texto = f"[{self.cor}]{conteudo}[/]"
+        print(destamparAviso if self.destampada == False else texto, end="")
 
-    def quebrar_linha(self, quebras=" "):
+    def quebrar_linha(self, quebras=1):
         print(quebras * "\n", end="")
 
 
-caneta1 = Caneta("azul")
+caneta1 = Caneta("vermelho")
 caneta2 = Caneta("amarelo")
+caneta3 = Caneta("verde")
 
-caneta1.escrever("Teste1")
-caneta2.escrever("Teste2")
-
+caneta1.escrever("_")
 caneta1.destampar()
 caneta2.destampar()
-caneta1.destampar()
-caneta2.destampar()
+caneta3.destampar()
 
 caneta1.escrever("Olá mundo!")
+caneta1.tampar()
+caneta1.escrever("_")
+caneta1.destampar()
 caneta2.escrever("Tudo bem?")
-caneta1.quebrar_linha(2)
-caneta1.escrever("Vamos estudar!")
-caneta2.escrever("Foco!")
-caneta1.quebrar_linha(1)
+caneta3.quebrar_linha(1)
+caneta3.escrever("Vamos estudar!")
+caneta3.quebrar_linha(2)

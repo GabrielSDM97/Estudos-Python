@@ -48,12 +48,11 @@ class ControleRemoto:
         while True:
             print(15 * "\n")
             if (self.power == 0):
-                self.status = Panel.fit(
-                    "[red]:prohibited: A TV está desligada[/]", title="[ TV ]")
+                self.status = Panel.fit("[red]:prohibited: A TV está desligada[/]", title="[ TV ]")
             elif (self.power == 1):
-                self.status = Panel.fit(
-                    f"CANAL = {"".join(self.listaCanais)}\n"
-                    f"VOLUME = {self.volCima * "[red on grey0] [/]"}{self.volBaixo * "[grey0 on white] [/]"}", title="[ TV ]")
+                conteudo = f"CANAL = {"".join(self.listaCanais)}\n"
+                conteudo += f"VOLUME = {self.volCima * "[red on grey0] [/]"}{self.volBaixo * "[grey0 on white] [/]"}"
+                self.status = Panel.fit(conteudo, title="[ TV ]")
             print(self.status)
             self.botao = str(
                 input(f"< CH{self.canal+1} >\t - VOL{self.volCima} + "))
