@@ -29,13 +29,13 @@ print(list(sorted(lista, key=lambda palavra: [num for num in palavra if num.isdi
 
 
 # Utilizando lambda dentro de outra função
-def myfunc(n):
+def func(n):
   # Retorna a função lambda
   return lambda a : a * n
 
-# Envia o argumento 3 para o parâmetro "n" de "myfunc"
-mytripler = myfunc(3)
+# Envia o argumento 3 para o parâmetro "n" de "func"
+triplicador = func(3)
 
-# Utiliza a função lambda retornada para "mytripler" e 
+# Utiliza a função lambda retornada para "triplicador" e 
 # insere em seu parâmetro o valor a ser multiplicado por "n"
-print(mytripler(11))
+print(triplicador(11))

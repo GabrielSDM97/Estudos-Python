@@ -1,6 +1,3 @@
-# from utilidades.mp3 import som
-# som("audios/monstro.mp3")
-
 from decimal import Decimal
 
 a = Decimal('0.1')

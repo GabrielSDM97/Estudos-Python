@@ -10,7 +10,7 @@ ciano = '\033[96m'
 indo de 10 até 0, com uma pausa de 1 segundo entre eles. '''
 
 pygame.init()
-pygame.mixer.music.load("audios/beep.mp3")
+pygame.mixer.music.load("../_áudios/beep.mp3")
 pygame.mixer.music.set_volume(0.5)
 
 for contagem in range(10, -1, -1):
@@ -19,6 +19,6 @@ for contagem in range(10, -1, -1):
     sleep(1)
 print(f'\n{verde}Feliz ano novo{limpar}!')
 
-pygame.mixer.music.load("audios/fireworks.mp3")
+pygame.mixer.music.load("../_áudios/fireworks.mp3")
 pygame.mixer.music.play()
 sleep(6)

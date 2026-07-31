@@ -12,7 +12,7 @@ class Aluno(Pessoa):
     def fazer_matricula(self) -> None:
         print(f"[blue]{self.nome}[/] de {self.idade} anos acabou de fazer matrícula no curso {self.curso} na turma {self.turma}!")
     def estudar(self) -> None:
-        print(f"{self.nome} está estudando materias do curso {self.curso}!")
+        print(f"[blue]{self.nome}[/] está estudando matérias do curso {self.curso}!")
 
 class Professor(Pessoa):
     def __init__(self, nome:str, idade:int, especialidade:str, nivel:str):
@@ -22,7 +22,7 @@ class Professor(Pessoa):
     def dar_aula(self) -> None:
         print(f"[yellow]{self.nome}[/] de {self.idade} anos, {self.especialidade} com {self.nivel}, acabou de dar aula!")
     def estudar(self) -> None:
-        print(f"{self.nome} está estudando para lecionar {self.especialidade}!")
+        print(f"[yellow]{self.nome}[/] está estudando para lecionar {self.especialidade}!")
 
 class Funcionario(Pessoa):
     def __init__(self, nome:str, idade:int, cargo:str, setor:str):
@@ -32,4 +32,4 @@ class Funcionario(Pessoa):
     def bater_ponto(self) -> None:
         print(f"[green]{self.nome}[/] de {self.idade} anos trabalha de {self.cargo} no setor {self.setor} e acabou de bater ponto!")
     def estudar(self) -> None:
-        print(f"{self.nome} está estudando assuntos do setor {self.setor}!")
+        print(f"[green]{self.nome}[/] está estudando assuntos do setor {self.setor}!")

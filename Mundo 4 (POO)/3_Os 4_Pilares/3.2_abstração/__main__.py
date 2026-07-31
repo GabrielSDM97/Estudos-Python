@@ -16,7 +16,7 @@ def main():
     p1.estudar()
     # inspect(p1, methods = True)
 
-    f1 = Funcionario("Maria", 25, "Secretária", "Admnistrativo")
+    f1 = Funcionario("Maria", 25, "Secretária", "Administrativo")
     f1.fazer_aniversario()
     f1.bater_ponto()
     f1.estudar()

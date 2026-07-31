@@ -1,3 +1,4 @@
+
 # A função "map()" executa a função especificada para cada ítem individualmente em um objeto iterável (lista, tupla, etc...).
 # O ítem é enviado para a função como parâmetro.
 
