@@ -1,3 +1,0 @@
-Rich no Python: Cores, Emojis, Tabelas e Debug Muito Mais Bonitos
-
-Link da Documentação: rich.readthedocs.io

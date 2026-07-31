@@ -9,20 +9,20 @@
 # Exemplo com sorted: sorted(argumento, key = lambda parâmetro: expressão)
 
 
-# Refazendo o exemplo da aula "2_map.py"
+# Refazendo o exemplo da aula "15.1_map.py"
 frutas1 = ("Maçã", "Uva", "Laranja")
 frutas2 = ("Goiaba", "Banana", "Pera")
 
 print(list(map(lambda f1, f2: f1+f2, frutas1, frutas2)))
 
 
-# Refazendo o exemplo da aula "3_filter.py"
+# Refazendo o exemplo da aula "15.2_filter.py"
 lista = ["maçã", "banana", "abacate", "cereja", "pera"]
 
 print(list(filter(lambda fruta: 'e' in fruta, lista)))
 
 
-# Refazendo o exemplo da aula "4_sorted.py"
+# Refazendo o exemplo da aula "15.3_sorted.py"
 lista = ["bask3t", "ment0", "vent1"]
 
 print(list(sorted(lista, key=lambda palavra: [num for num in palavra if num.isdigit()])))
