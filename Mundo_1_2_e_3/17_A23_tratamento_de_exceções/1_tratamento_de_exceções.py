@@ -36,8 +36,8 @@
 # import moduloteste
 
 
-''' Existem muitos outros tipos de exceptions (exceções), e, para evitar que um erro quebre o programa, 
-utilizamos a estrutura 'try...except...else...finally' '''
+# Existem muitos outros tipos de exceptions (exceções), e, para evitar que um erro quebre o programa, 
+# utilizamos a estrutura 'try...except...else...finally'
 
 try:
     a = int(input('Digite o 1º número: '))
@@ -59,3 +59,21 @@ finally: # É sempre executado, tanto faz se for depois de 'else' ou 'except'.
 # Dica: Sempre inicie os testes com valores corretos.
 
 # IMPORTANTE!!! O 'finally' SEMPRE será executado, mesmo que seja posicionado depois de um 'return' em uma função ou depois de um 'break' em um laço de repetição.
+
+
+# É possível também forçar um erro com "raise TipoErro("Texto")"
+
+try:
+    valorPar = 3
+    if valorPar % 2 != 0:
+        raise ValueError(f"\033[91mERRO!\033[m O número {valorPar} não é par!")
+except ValueError as ve:
+    print(ve)
+else:
+    print(f"Numéro {valorPar} é par!")
+
+# A palavra chave "raise" pode ser utilizada fora da estrutura try também.
+
+valorImpar = 4
+if valorImpar % 2 == 0:
+    raise ValueError(f"\033[91mERRO!\033[m O número {valorImpar} não é impar!")
