@@ -9,7 +9,6 @@ class Cafe(BebidaQuente):
 
     def misturar(self):
         print("2. Passando água pressurizada pelo pó de café moído.")
-        self.servir()
 
 
 class Cha(BebidaQuente):
@@ -18,7 +17,6 @@ class Cha(BebidaQuente):
 
     def misturar(self):
         print("2. Mergulhando o sachê de ervas na água.")
-        self.servir()
 
 
 class Leite(BebidaQuente):
@@ -27,4 +25,3 @@ class Leite(BebidaQuente):
 
     def misturar(self):
         print("2. Passando vapor pressurizado pelo bico do leite.")
-        self.servir()

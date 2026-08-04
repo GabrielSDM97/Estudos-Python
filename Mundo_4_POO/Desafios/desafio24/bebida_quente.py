@@ -15,8 +15,9 @@ class BebidaQuente(ABC):
 
     def ferver_agua(self):
         print("1. Fervendo água a 100 graus Célsius.")
-        self.misturar()
 
     def preparar(self):
-        print("\n--- Iniciando Preparo ---")
+        print(f"\n--- Iniciando Preparo de {self.__class__.__name__} ---")
         self.ferver_agua()
+        self.misturar()
+        self.servir()

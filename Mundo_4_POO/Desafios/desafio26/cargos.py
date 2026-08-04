@@ -4,19 +4,21 @@ install()
 
 
 class Horista(Funcionario):
-    def __init__(self, nome, valor_hora, horas_trab):
+    def __init__(self, nome, valor_hora: float, horas_trab: int):
         super().__init__(nome)
         self.valor_hora = valor_hora
         self.horas_trab = horas_trab
+        self.sal_bruto = self.valor_hora * self.horas_trab
 
     def calc_sal(self):
-        self.sal_bruto = self.valor_hora * self.horas_trab
-        self.salario = self.sal_bruto - (self.sal_bruto * (Funcionario.inss/100))
+        desconto = self.sal_bruto * (Funcionario.inss/100)
+        self.salario = self.sal_bruto - desconto
 
 
 class Mensalista(Funcionario):
-    def __init__(self, nome, sal_bruto):
+    def __init__(self, nome, sal_bruto = Funcionario.sal_min):
         super().__init__(nome, sal_bruto)
 
     def calc_sal(self):
-        self.salario = self.sal_bruto - (self.sal_bruto * (Funcionario.inss/100))
+        desconto = self.sal_bruto * (Funcionario.inss/100)
+        self.salario = self.sal_bruto - desconto

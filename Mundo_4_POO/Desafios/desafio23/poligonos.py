@@ -6,28 +6,30 @@ install()
 
 class Circulo(Poligono):
 
-    def __init__(self, qtd_lados: int):
-        super().__init__(qtd_lados)
+    def __init__(self, raio = 1):
+        super().__init__(0)
+        self.raio = raio
 
     def __str__(self):
-        return f"Círculo de raio {self.qtd_lados}"
+        return f"Círculo de raio {self.raio} cm"
 
-    def area(self) -> float:
-        return pi * (self.qtd_lados ** 2)
+    def area(self):
+        return (self.raio ** 2) * pi
 
-    def perimetro(self) -> float:
-        return 2 * (pi * self.qtd_lados)
+    def perimetro(self):
+        return (pi * self.raio) * 2
 
 
 class Quadrado(Poligono):
-    def __init__(self, qtd_lados: int):
-        super().__init__(qtd_lados)
+    def __init__(self, lado = 1):
+        super().__init__(4)
+        self.lado = lado
 
     def __str__(self):
-        return f"Quadrado de lado {self.qtd_lados}"
+        return f"Quadrado de lado {self.lado} cm"
 
-    def area(self) -> float:
-        return self.qtd_lados ** 2
+    def area(self):
+        return self.lado ** 2
 
-    def perimetro(self) -> float:
-        return 4 * self.qtd_lados
+    def perimetro(self):
+        return self.qtd_lados * self.lado

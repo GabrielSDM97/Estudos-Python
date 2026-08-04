@@ -3,6 +3,7 @@
 # Crie a classe ControleRemoto, onde vamos simular o funcionamento de um controle
 # simples (canal, volume, e liga/desliga)
 
+from os import system
 from rich import print
 from rich.traceback import install
 from rich.panel import Panel
@@ -67,10 +68,10 @@ class ControleRemoto:
             case "0":
                 quit()
             case _:
-                print("[red]Opção inválida![/] Tente novamente.")
+                pass
 
     def hud_tv(self) -> None:
-        print(30 * "\n")
+        system("clear")
         status = ""
         if self.ligado == False:
             status = Panel.fit("[red]:prohibited: A TV está desligada[/]", title="[ TV ]")

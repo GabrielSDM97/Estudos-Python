@@ -1,0 +1,109 @@
+Desafio 001
+
+Década que ocorreu a Crise do Software: 
+R: 1960
+
+
+Desafio 002
+
+Característica que identifica as primeiras linguagens lineares:
+R: Desvios forçados com GOTO
+
+
+Desafio 003
+
+Criador da linguagem Smalltak (primeira linguagem OO):
+R: Alan Kay
+
+
+Desafio 004
+
+A linguagem Simula foi um superconjunto de que outra linguagem?
+R: ALGOL
+
+
+Desafio 005
+
+Na silga OOAD, as últimas letras significam...
+R: Analysis / Design
+
+
+Desafio 006
+
+Criei um sistema para Escola, ao criar outro sistema para Academia,
+parte do trabalho já estará feita, pois tenho Alunos nos dois. Qual
+característica de POO se encaixa na situação acima:
+R: Reutilizável
+
+
+Desafio 007
+
+Se precisar adicionar uma nova funcionalidade ao sistema, consigo
+fazer isso com grande facilidade.
+R: Extensível
+
+
+Desafio 008
+
+Posso desenvolver várias funções que dependam uma da outra ao mesmo
+tempo se o planejamento for seguido:
+R: Oportuno
+
+
+Desafio 009
+
+O código fica muito simples de ler e de compreender, já que não preciso
+saber os detalhes de funcionamento ao programar.
+R: Natural
+
+
+Desafio 010
+
+Posso alterar como uma funcionalidade trabalha e tudo continua funcionando
+como antes.
+R: Confiável
+
+
+Desafio 011
+
+Exemplo de objeto abstrado:
+R: Notificação
+
+
+Desafio 012
+
+Na teoria de OO, o termo usado para o ato de fazer um objeto existir,
+a partir de um modelo se chama:
+R: Instanciar
+
+
+Desafio 013
+
+Todo objeto tem uma lista de atividade que podem ser feitas com ele ou
+que ele pode desempenhar sozinho, que são:
+R: Métodos
+
+
+Desafio 014
+
+Ao conjunto de todos os valores de atributos de um objeto em um determinado
+momento, damos o nome de:
+R: Estado
+
+
+Desafio 015
+
+Estrutura de dois objetos: um concreto e outro abstrato.
+Devem conter, atributos, métodos e estados.
+
+-- Objeto concreto --
+Classe: Saxofone
+Atributos: Marca, Tipo, Peso, Palheta, Boquilha, Braçadeira.
+Métodos: trocarPalheta(), trocarBoquilha(), trocarBraçadeira(), tocarSax(), limparSax(), repararSax().
+Estados: Marca: Dakapo, Tipo: Alto, Peso: 5KG, Palheta: Plastireed, Boquilha: Everton, Braçadeira: Everton
+
+-- Objeto abstrato --
+Classe: Partitura
+Atributos: Velocidade, Tonalidade, Estilo.
+Métodos: aumentarVelocidade(), reduzirVelocidade(), mudarTonalidade(), mudarEstilo()
+Estados: Velocidade: 60BPM, Tonalidade: Sol maior, Estilo: Erudito

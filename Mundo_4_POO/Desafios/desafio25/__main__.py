@@ -1,27 +1,29 @@
+from os import system
 from veiculos import *
-from rich.traceback import install
 from rich.table import Table
+from rich.traceback import install
 install()
 
 
 def main():
-    tabelaEntregas = Table(title="Tabela de entregas")
-    dist = 100
-
-    entrega1 = Moto(dist)
-
-    entrega2 = Caminhao(dist)
-
-    entrega3 = Drone(dist)
-
-    tabelaEntregas.add_column("Distância", justify="left")
-    tabelaEntregas.add_column("Tipo", justify="left")
-    tabelaEntregas.add_column("Frete", justify="left")
-    tabelaEntregas.add_row(f"{entrega1}", f"{entrega1.__class__.__name__}", f"{entrega1.calc_frete()}")
-    tabelaEntregas.add_row(f"{entrega2}", f"{entrega2.__class__.__name__}", f"{entrega2.calc_frete()}")
-    tabelaEntregas.add_row(f"{entrega3}", f"{entrega3.__class__.__name__}", f"{entrega3.calc_frete()}")
     
-    print(tabelaEntregas)
+    while True:
+        system("clear")
+        tabelaEntregas = Table(title="Tabela de entregas")
+        dist = float(input("Distância: "))
+
+        listaViagens = [Moto(dist), Caminhao(dist), Drone(dist)]
+        
+        tabelaEntregas.add_column("Distância", justify="left")
+        tabelaEntregas.add_column("Tipo", justify="left")
+        tabelaEntregas.add_column("Frete", justify="left")
+
+        for viagem in listaViagens:
+            tabelaEntregas.add_row(f"[yellow bold]{dist}KM[/]", f"[bold]{viagem.__class__.__name__}[/]", f"{viagem.calc_frete()}")
+        print(tabelaEntregas)
+
+        continuar = str(input("Deseja verificar uma nova distância? [S/N] "))
+        if continuar in "Nn": break
 
 
 if __name__ == "__main__":

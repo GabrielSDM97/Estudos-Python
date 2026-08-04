@@ -6,18 +6,22 @@ install()
 
 class Funcionario(ABC):
     inss = 7.5
-    sal_min = 1612
+    sal_min = 1612.00
 
-    def __init__(self, nome, sal_bruto=0, salario=0):
+    def __init__(self, nome: str, sal_bruto: float = 0, salario: float = 0):
         self.nome = nome
         self.sal_bruto = sal_bruto
         self.salario = salario
 
-    def analisar_sal(self):
-        painelSal = Panel(f"O salário de [yellow bold]{self.nome}[/] ([dark_blue bold]{self.__class__.__name__}[/]) é de [green bold]R${self.salario:,.2f}[/] "
-                          f"e corresponde a [rosy_brown bold]{(self.salario/Funcionario.sal_min):.1f}[/] salários mínimos.", title="Análise de Salário", width=50)
+    def analisar_sal(self) -> "Panel":
+        salariosMin = self.salario/Funcionario.sal_min
+        mensagem = f"O salário de [yellow bold]{self.nome}[/] "
+        mensagem += f"([dark_blue bold]{self.__class__.__name__}[/]) "
+        mensagem += f"é de [green bold]R${self.salario:,.2f}[/] "
+        mensagem += f"e corresponde a [rosy_brown bold]{(salariosMin):.1f}[/] salários mínimos."
+        painelSal = Panel(mensagem, title="Análise de Salário", width=50)
         return painelSal
 
     @abstractmethod
-    def calc_sal(self):
+    def calc_sal(self) -> None:
         pass
