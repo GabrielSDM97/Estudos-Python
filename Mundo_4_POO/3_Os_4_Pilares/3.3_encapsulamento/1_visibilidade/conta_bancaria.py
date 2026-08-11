@@ -1,25 +1,14 @@
 class ContaBancaria:
-    """
-    Cria um conta bancária, permitindo saques e depósitos!
-    variavel = ContaBancaria(número da conta, nome do títular, saldo em reais)
-
-    Métodos:
-    variavel.saque(valor do saque)
-    variavel.deposito(valor do deposito)
-
-    Importante: O valor de saque deve ser igual ou menor que o saldo da conta.\n
-    """
-
-    def __init__(self, numeroConta:int, titular:str, saldo:float):
-        ## Tipos de visibilidade
-        self.id:int = numeroConta # Público (+)
-        self._titular:str = titular # Protegido (#)
-        self.__saldo:float = saldo # Privado (-)
+    def __init__(self, numeroConta: int, titular: str, saldo: float):
+        # Tipos de visibilidade
+        self.id: int = numeroConta  # Público (+)
+        self._titular: str = titular  # Protegido (#)
+        self.__saldo: float = saldo  # Privado (-)
 
     def __str__(self) -> str:
         return f"Estado atual da conta: {self.__dict__}"
 
-    def saque(self, valor:float) -> None:
+    def saque(self, valor: float) -> None:
         valor = abs(valor) # Valor absoluto (útil para tornar negativos em positivos)
         if valor > self.__saldo:
             print(f"\033[91mSaldo insuficiente!\033[m\n")
@@ -27,7 +16,7 @@ class ContaBancaria:
             self.__saldo -= valor
             print(f"Saque de R${valor:,.2f} efetuado com sucesso!\n")
 
-    def deposito(self, valor:float) -> None:
+    def deposito(self, valor: float) -> None:
         valor = abs(valor)
         self.__saldo += valor
         print(f"Depósito de \033[92mR${valor:,.2f}\033[m efetuado com sucesso!\n")

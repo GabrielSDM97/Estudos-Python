@@ -1,4 +1,3 @@
-from rich import print
 from rich.traceback import install
 install()
 
@@ -7,24 +6,15 @@ class Termostato:
         self.__temperatura = 24
 
     @property
-    def temperatura(self):
+    def temperatura(self) -> float:
         return self.__temperatura
 
     @temperatura.setter
-    def temperatura(self, temperatura):
-        try:
-            if temperatura % 0.5 != 0:
-                raise ValueError(f"ERRO! Temperatura {temperatura} é inválida!")
-        except ValueError as ve:
-            print(f"[red]{ve}[/]")
-        else:
-            if temperatura < 16:
-                self.__temperatura = 16
-            elif temperatura > 30:
-                self.__temperatura = 30
-            else:
-                self.__temperatura = temperatura
+    def temperatura(self, temp: float):
+        if temp % 0.5 != 0:
+            raise ValueError(f"Temperatura {temp} é inválida!")
+        self.__temperatura = 16 if temp < 16 else 30 if temp > 30 else temp
 
     @property
-    def ftemperatura(self):
-        return f"[yellow]{self.__temperatura}[/] °C"
+    def ftemperatura(self) -> str:
+        return f"{self.__temperatura} {chr(176)}C"

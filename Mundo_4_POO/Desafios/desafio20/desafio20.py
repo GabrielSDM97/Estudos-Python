@@ -11,12 +11,12 @@ install()
 
 class Gamer:
 
-    def __init__(self, nome:str=" ", nick:str=" "):
-        self.nome:str = nome
-        self.nick:str = nick
-        self.jogosFavoritos:list = list()
+    def __init__(self, nome: str = " ", nick: str = " "):
+        self.nome: str = nome
+        self.nick: str = nick
+        self.jogosFavoritos: list = list()
 
-    def add_jogo_favorito(self, jogo:str=" ") -> None:
+    def add_jogo_favorito(self, jogo: str = " ") -> None:
         self.jogosFavoritos.append(f":video_game: [purple]{jogo}[/]")
 
     def ficha_jogador(self) -> None:

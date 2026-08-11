@@ -31,7 +31,7 @@ class ControleRemoto:
     def hud_volumes(self) -> str:
         volumeHud = ""
         for volume in range(ControleRemoto.volumeMin, ControleRemoto.volumeMax+1):
-            volumeHud += "[white on white] [/]" if volume > self.volumeAtual else "[cyan1 on cyan1] [/]"
+            volumeHud += "[cyan1 on cyan1] [/]" if volume <= self.volumeAtual else "[white on white] [/]"
         return volumeHud
 
     def aumentar_volume(self) -> None:

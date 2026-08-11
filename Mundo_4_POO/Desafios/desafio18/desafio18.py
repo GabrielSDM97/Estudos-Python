@@ -14,12 +14,12 @@ install()
 
 
 class Churrasco:
-    precoKG:float = 82.4
-    consumoPessoaKG:float = 0.4
+    precoKG: float = 82.4
+    consumoPessoaKG: float = 0.4
 
-    def __init__(self, titulo:str=" ", convidados:int=0):
-        self.titulo:str = titulo
-        self.convidados:int = convidados
+    def __init__(self, titulo: str = " ", convidados: int = 0):
+        self.titulo: str = titulo
+        self.convidados: int = convidados
 
     def __str__(self) -> str:
         return f"Calcula despezas do churrasco {self.titulo} com {self.convidados} convidados!"
@@ -39,8 +39,9 @@ class Churrasco:
         conteudo += f"Recomendo comprar [orange4]{self.peso_carne():,.2f}KG[/] de carne.\n"
         conteudo += f"O custo total será de [red]R${self.custo_total():,.2f}[/].\n"
         conteudo += f"Cada pessoa pagará [green]R${self.preco_por_pessoa():,.2f}[/] para participar.\n"
-        painel = Panel(conteudo, title=self.titulo, width = 70)
+        painel = Panel(conteudo, title=self.titulo, width=70)
         print(painel)
+
 
 churras1 = Churrasco("Churras dos amigos 1", 15)
 print(churras1)
