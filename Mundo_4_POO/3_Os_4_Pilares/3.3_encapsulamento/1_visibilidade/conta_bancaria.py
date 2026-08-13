@@ -8,7 +8,7 @@ class ContaBancaria:
     def __str__(self) -> str:
         return f"Estado atual da conta: {self.__dict__}"
 
-    def saque(self, valor: float) -> None:
+    def sacar(self, valor: float) -> None:
         valor = abs(valor) # Valor absoluto (útil para tornar negativos em positivos)
         if valor > self.__saldo:
             print(f"\033[91mSaldo insuficiente!\033[m\n")
@@ -16,7 +16,7 @@ class ContaBancaria:
             self.__saldo -= valor
             print(f"Saque de R${valor:,.2f} efetuado com sucesso!\n")
 
-    def deposito(self, valor: float) -> None:
+    def depositar(self, valor: float) -> None:
         valor = abs(valor)
         self.__saldo += valor
         print(f"Depósito de \033[92mR${valor:,.2f}\033[m efetuado com sucesso!\n")

@@ -1,0 +1,13 @@
+Hash = Bagunça
+SHA = Secure Hash Algorithm
+
+Basicamente embaralha senhas de forma que fica quase
+que impossível de descriptografar.
+
+As hashs são comparadas no banco de dados para ter
+acesso a um determinado dado.
+
+Atualmente os algorítmos sha1 e md5 já foram quebrados.
+Atualmente sha256 é o algorítmo recomendado para uso.
+
+Hoje em dia, toda senha é criptografada em hash.

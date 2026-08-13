@@ -15,7 +15,6 @@ def main():
         inspect(a1, private=True, methods=True)
     except ValueError as ve:
         print(f"[red bold]{ve.__class__.__name__}[/]: {ve}")
-    
 
     # Erro 1 - Inserir ano anterior a 1926 ou após 2026
     try:

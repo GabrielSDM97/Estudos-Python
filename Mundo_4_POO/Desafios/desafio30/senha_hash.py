@@ -12,12 +12,13 @@ class Credencial:
         return self.__hash
 
     @senha.setter
-    def senha(self, senha: str):
-        self.__hash = sha256(senha.encode()).hexdigest()
+    def senha(self, novaSenha: str):
+        if len(novaSenha.strip()) <= 0:
+            raise ValueError("A senha deve ter pelo menos 1 caractere!")
+        self.__hash = sha256(novaSenha.encode("utf-8")).hexdigest()
 
-    def validar(self, senha: str) -> str:
-        senhaTemp = sha256(senha.encode()).hexdigest()
-        if senhaTemp != self.__hash:
+    def validar(self, senhaUsuario: str) -> str:
+        hashTemp = sha256(senhaUsuario.encode("utf-8")).hexdigest()
+        if hashTemp != self.__hash:
             raise PermissionError("Senha inválida!")
-        return "[green bold]Senhas iguais![/]"
-
+        return "[green bold]Senha correta![/]"
