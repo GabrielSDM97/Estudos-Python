@@ -9,7 +9,8 @@ install()
 # Aluno É UMA Pessoa
 class Aluno(Pessoa):  # class NomeClasse(Superclasse) - Herda métodos
     def __init__(self, nome: str, idade: int, curso: str, turma: str):
-        # Sintaxe que invoca os atributos do método construtor da superclasse
+        # super() = Função que permite chamar métodos da superclasse a partir de suas subclasses.
+        # Abaixo a função "super()" está chamando o método construtor da superclasse.
         super().__init__(nome, idade)
         self.curso = curso
         self.turma = turma

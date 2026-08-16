@@ -42,6 +42,3 @@ def teste():
     return bool(1 == 2)
 
 print(teste)
-
-
-

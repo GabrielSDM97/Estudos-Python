@@ -4,44 +4,44 @@ install()
 
 
 class Retangulo:
-    def __init__(self, base: float = 1, altura: float = 1):
+    def __init__(self, base: int|float = 1, altura: int|float = 1):
         # Atributos de instância
         self._base = None
         self._altura = None
         self._area = None
 
-        # Atributos validáveis
+        # Atributos validáveis. Muito mais seguro!
         self.base = base
         self.altura = altura
 
-    def validacao(self, valor):
-        if not isinstance(valor, (float, int)):
+    def validar_valor(self, valor):
+        if not isinstance(valor, (int, float)):
             raise TypeError("Os valores informados devem ser numéricos!")
         if valor < 0:
             raise ValueError("Os valores numéricos informados devem ser positivos!")
 
     @property
-    def base(self) -> float:
-        self._area = self._base * self._altura
-        return self._area
+    def base(self) -> int|float:
+        return self._base
 
     @base.setter
-    def base(self, base: float):
-        self.validacao(base)
+    def base(self, base: int|float):
+        self.validar_valor(base)
         self._base = base
 
     @property
-    def altura(self) -> float:
+    def altura(self) -> int|float:
         return self._altura
 
     @altura.setter
-    def altura(self, altura: float):
-        self.validacao(altura)
+    def altura(self, altura: int|float):
+        self.validar_valor(altura)
         self._altura = altura
 
     @property
-    def area(self) -> float:
-        return self._base * self._altura
+    def area(self) -> int|float:
+        self._area = self._base * self._altura
+        return self._area
 
     @area.setter
     def area(self, area: tuple):

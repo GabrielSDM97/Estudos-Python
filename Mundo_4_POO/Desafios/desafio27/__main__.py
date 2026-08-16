@@ -6,8 +6,8 @@ install()
 
 
 def main():
-    guerreiro1 = Guerreiro("Tyr", 200)
-    guerreiro2 = Mago("Draven", 200)
+    guerreiro1 = Guerreiro("Tyr", 100)
+    guerreiro2 = Mago("Draven", 100)
     round = 1
 
     while True:

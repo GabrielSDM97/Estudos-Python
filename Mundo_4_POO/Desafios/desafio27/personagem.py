@@ -3,7 +3,7 @@ from random import randint, choice
 from time import sleep
 from rich import print
 from rich.panel import Panel
-from mp3player import mp3
+from utils.mp3player import mp3
 from rich.traceback import install
 install()
 
@@ -18,7 +18,7 @@ class Personagem(ABC):
         self.vida -= dano
         if self.vida <= 0:
             print(f"\n[yellow bold]{self.nome}[/] foi [red bold]derrotado[/] por [yellow bold]{atacante.nome}[/] ao receber [red bold]{dano}[/] de dano! \n\n\t\t   [red bold italic]GAME OVER![/]\n")
-            mp3("game_over.mp3")
+            mp3("sons/game_over.mp3")
             quit()
         print(f"\n[yellow bold]{self.nome}[/] recebeu [red bold]{dano}[/] de dano ficando com [bold]{self.vida}[/] de vida!")
         sleep(0.5)

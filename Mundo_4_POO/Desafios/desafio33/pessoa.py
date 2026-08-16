@@ -1,12 +1,13 @@
-from abc import ABC
+from datetime import date
 from rich.traceback import install
 install()
 
 
-class Pessoa(ABC):
-    def __init__(self, nome, nascimento):
+class Pessoa():
+    def __init__(self, nome: str, nascimento: int):
         self._nome = nome
-        self._nascimento = nascimento if 1926 <= nascimento <= 2026 else None
+        self._nascimento = None
+        self.nascimento = nascimento
 
     @property
     def nascimento(self):
@@ -14,13 +15,13 @@ class Pessoa(ABC):
 
     @nascimento.setter
     def nascimento(self, nascimento):
-        if nascimento < 1926 or nascimento > 2026:
+        if nascimento < 1926 or nascimento > date.today().year:
             raise ValueError("Ano de nascimento inválido!")
         self._nascimento = nascimento
 
     @property
     def idade(self):
-        return 2026 - self._nascimento
+        return date.today().year - self._nascimento
 
     @idade.setter
     def idade(self, idade):

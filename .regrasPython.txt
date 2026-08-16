@@ -3,4 +3,4 @@ acesse o link abaixo.
 
 https://peps.python.org/ 
 
-PEP = Python Enhancement Proposals 
+PEP = Python Enhancement Proposals

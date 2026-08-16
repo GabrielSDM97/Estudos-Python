@@ -5,18 +5,18 @@ install()
 
 
 class ContaBancaria:
-    def __init__(self, id: int, titular: str, saldo: float, chave: str = None):
+    def __init__(self, id: int, titular: str, saldo: int|float, chave: str = None):
         self._id = id
         self._titular = titular
         self.__saldo = saldo
-        self.__hash = sha256(chave.encode()).hexdigest() if chave else sha256(self.pede_senha().encode()).hexdigest()
+        self.__hash = sha256(chave.encode("utf-8")).hexdigest() if chave else sha256(self.pede_senha().encode("utf-8")).hexdigest()
         print(f"Conta {self._id} criada com sucesso! Saldo atual de [green bold]R${self.__saldo:,.2f}[/]")
 
     def __str__(self):
         return f"Saldo atual da conta {self._id}: R${self.__saldo:,.2f}"
 
     def validar_senha(self, chave: str) -> bool:
-        hashChave = sha256(chave.encode()).hexdigest()
+        hashChave = sha256(chave.encode("utf-8")).hexdigest()
         return bool(hashChave == self.__hash)
 
     def pede_senha(self) -> str:
@@ -25,10 +25,10 @@ class ContaBancaria:
             chave = str(pwinput("Senha: ", mask = "*")).strip()
             if len(chave) >= 6:
                 break
-            print("[red bold]Erro![/] A senha deve ter pelo menos 6 dígitos, tente novamente!")
+            print("[red bold]Erro![/] A senha deve ter pelo menos 6 dígitos. Tente novamente!")
         return chave
 
-    def sacar(self, valor: float, chave: str = None) -> str:
+    def sacar(self, valor: int|float, chave: str = None) -> str:
         if valor > self.__saldo:
             raise ValueError("Saldo insuficiente!\n")    
         chave = self.pede_senha() if chave == None else chave
@@ -38,7 +38,7 @@ class ContaBancaria:
             return f"Saque de [green bold]R${valor:,.2f}[/] efetuado com sucesso!\n"
         raise PermissionError("Senha inválida! Saque não autorizado!\n")
 
-    def depositar(self, valor: float) -> str:
+    def depositar(self, valor: int|float) -> str:
         valor = abs(valor)
         self.__saldo += valor
         return f"Depósito de [green bold]R${valor:,.2f}[/] efetuado com sucesso!\n"
