@@ -14,33 +14,32 @@ class Livro:
     def __init__(self, nome: str = " ", paginas: int = 0):
         self.nome: str = nome
         self.fim: int = paginas
-        self.paginaAtual: int = 1
-        self.livroAberto: int = 0
+        self.pagina_atual: int = 1
 
         print(f"\n:book: Você acabou de abrir o livro \"[green]{self.nome}[/]\" que tem [steel_blue1]{self.fim} páginas[/] no total. "
-              f"Você está na página {self.paginaAtual}!\n")
+              f"Você está na página {self.pagina_atual}!\n")
 
     def fim_do_livro(self) -> bool:
-        return True if self.paginaAtual == self.fim else False
+        return True if self.pagina_atual == self.fim else False
 
     def progresso_geral(self, quantidade: int) -> str:
-        return f"Você avançou {quantidade} páginas. Agora está na página {self.paginaAtual}!\n"
+        return f"Você avançou {quantidade} páginas. Agora está na página {self.pagina_atual}!\n"
 
     def progresso_atual(self) -> str:
-        return f"[bold]Pg {self.paginaAtual}[/] >"
+        return f"[bold]Pg {self.pagina_atual}[/] >"
 
     def avancar_pagina(self, quantidade: int) -> None:
-        if (quantidade <= 0):
+        if quantidade <= 0:
             print("[bold red on grey0]Por favor, insira um valor positivo[/]\n")
             return
         contador = 0
         while contador < quantidade and not self.fim_do_livro():
             contador += 1
-            self.paginaAtual += 1
+            self.pagina_atual += 1
             print(self.progresso_atual(), end=" ")
             sleep(0.15)
         print(self.progresso_geral(contador), end=" ")
-        if (self.fim_do_livro()):
+        if self.fim_do_livro():
             print("\n[dodger_blue3]Fim do livro! :waving_hand:[/]\n")
             quit()
 

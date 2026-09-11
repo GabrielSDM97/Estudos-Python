@@ -22,8 +22,8 @@ def main():
         except PermissionError as pe:
             print(f"\n[red bold]{pe.__class__.__name__}[/]: {pe}")
 
-        trocarSenha = str(input("Deseja trocar sua senha? [S/N]"))
-        if trocarSenha in "Ss":
+        trocar_senha = str(input("Deseja trocar sua senha? [S/N]"))
+        if trocar_senha in "Ss":
             try:
                 diario.senha = str(input("Nova senha: "))
             except PermissionError as pe:

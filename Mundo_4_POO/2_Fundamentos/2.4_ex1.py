@@ -21,8 +21,8 @@ class ContaBancaria:
     Importante: O valor de saque deve ser igual ou menor que o saldo da conta.\n
     """
 
-    def __init__(self, numeroConta:int, titular:str, saldo:float):
-        self.id:int = numeroConta
+    def __init__(self, numero_conta:int, titular:str, saldo:float):
+        self.id:int = numero_conta
         self.titular:str = titular
         self.saldo:float = saldo
 

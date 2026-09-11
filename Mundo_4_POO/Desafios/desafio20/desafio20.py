@@ -14,14 +14,14 @@ class Gamer:
     def __init__(self, nome: str = " ", nick: str = " "):
         self.nome: str = nome
         self.nick: str = nick
-        self.jogosFavoritos: list = list()
+        self.jogos_favoritos: list = list()
 
     def add_jogo_favorito(self, jogo: str = " ") -> None:
-        self.jogosFavoritos.append(f":video_game: [purple]{jogo}[/]")
+        self.jogos_favoritos.append(f":video_game: [purple]{jogo}[/]")
 
     def ficha_jogador(self) -> None:
         conteudo = f"Nome real: [yellow]{self.nome}[/]\n"
-        favoritos = "\n".join(sorted(self.jogosFavoritos, key=str.lower))
+        favoritos = "\n".join(sorted(self.jogos_favoritos, key=str.lower))
         conteudo += f"Jogos favoritos:\n{favoritos}"
         titulo = f"Jogador <[green]{self.nick}[/]>"
         ficha = Panel.fit(conteudo, title=titulo)

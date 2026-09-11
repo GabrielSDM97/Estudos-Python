@@ -42,3 +42,14 @@ print('{2} {1} {0}.'.format('A', 'B', 'C'))
 ''' 2. f-string
 Metódo de formatação desenvolvido na versão 3.6 do Python. É o metodo mais moderno e recomendado por sua legibilidade, performance e por ser conciso. '''
 print(f'Olá {mundo}')
+
+
+#########
+# Extra #
+#########
+
+a = 10; b = 20
+
+print(a, b)
+a, b = b, a # Invertendo valores
+print(a, b)

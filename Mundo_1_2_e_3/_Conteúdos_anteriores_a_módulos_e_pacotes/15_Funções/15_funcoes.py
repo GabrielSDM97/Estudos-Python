@@ -263,3 +263,14 @@ def ListaAleatoria(num=1):
 
 lista = list()
 print(ListaAleatoria(10))
+
+
+### Extra ###
+
+## Desempacotamento de tupla (tuple unpacking) ##
+def teste():
+  # Retorna uma tupla
+  return 1, 2, 3
+
+a, b, c = teste() # Desempacota na sequência exata das variáveis
+print(a, b, c)

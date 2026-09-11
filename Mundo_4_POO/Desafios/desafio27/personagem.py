@@ -34,8 +34,8 @@ class Personagem(ABC):
         conteudo += f"Vida: [green bold]{self.vida}[/]\n"
         conteudo += f"Classe: [dark_magenta bold]{self.__class__.__name__}[/]\n"
         conteudo += f"Golpes: [salmon1 bold]{" [white]-[/] ".join(self.golpes)}[/]"
-        painelStats = Panel.fit(conteudo, title=f"Status")
-        print(painelStats)
+        painel_stats = Panel.fit(conteudo, title=f"Status")
+        print(painel_stats)
 
     @abstractmethod
     def curar(self) -> None:

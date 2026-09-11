@@ -11,44 +11,44 @@ install()
 
 
 class ControleRemoto:
-    canalMin:int = 1
-    volumeMin:int = 1
-    canalMax:int = 5
-    volumeMax:int = 5
+    canal_min:int = 1
+    volume_min:int = 1
+    canal_max:int = 5
+    volume_max:int = 5
  
 
     def __init__(self):
         self.ligado:bool = False
-        self.volumeAtual:int = 1
-        self.canalAtual:int = 1
+        self.volume_atual:int = 1
+        self.canal_atual:int = 1
 
     def hud_canais(self) -> str:
-        canaisHud = ""
-        for canal in range(ControleRemoto.canalMin, ControleRemoto.canalMax+1):
-            canaisHud += f" {canal} " if self.canalAtual != canal else f"[grey0 on green1] {canal} [/]"
-        return canaisHud
+        canais_hud = ""
+        for canal in range(ControleRemoto.canal_min, ControleRemoto.canal_max+1):
+            canais_hud += f" {canal} " if self.canal_atual != canal else f"[grey0 on green1] {canal} [/]"
+        return canais_hud
 
     def hud_volumes(self) -> str:
-        volumeHud = ""
-        for volume in range(ControleRemoto.volumeMin, ControleRemoto.volumeMax+1):
-            volumeHud += "[cyan1 on cyan1] [/]" if volume <= self.volumeAtual else "[white on white] [/]"
-        return volumeHud
+        volume_hud = ""
+        for volume in range(ControleRemoto.volume_min, ControleRemoto.volume_max+1):
+            volume_hud += "[cyan1 on cyan1] [/]" if volume <= self.volume_atual else "[white on white] [/]"
+        return volume_hud
 
     def aumentar_volume(self) -> None:
         if self.ligado:
-            self.volumeAtual += 1 if self.volumeAtual < ControleRemoto.volumeMax else 0
+            self.volume_atual += 1 if self.volume_atual < ControleRemoto.volume_max else 0
             
     def diminuir_volume(self) -> None:
         if self.ligado:
-            self.volumeAtual -= 1 if self.volumeAtual > ControleRemoto.volumeMin else 0
+            self.volume_atual -= 1 if self.volume_atual > ControleRemoto.volume_min else 0
     
     def avancar_canal(self) -> None:
         if self.ligado:
-            self.canalAtual += 1 if self.canalAtual < ControleRemoto.canalMax else -(ControleRemoto.canalMax - 1)
+            self.canal_atual += 1 if self.canal_atual < ControleRemoto.canal_max else -(ControleRemoto.canal_max - 1)
 
     def retroceder_canal(self) -> None:
         if self.ligado:
-            self.canalAtual -= 1 if self.canalAtual > ControleRemoto.canalMin else -(ControleRemoto.canalMax - 1)
+            self.canal_atual -= 1 if self.canal_atual > ControleRemoto.canal_min else -(ControleRemoto.canal_max - 1)
 
     def ligar_desligar(self) -> None:
         self.ligado = True if self.ligado == False else False
@@ -80,7 +80,7 @@ class ControleRemoto:
             conteudo += f"VOLUME = {self.hud_volumes()}"
             status = Panel.fit(conteudo, title="[ TV ]")
         print(status)
-        self.botoes_controle(str(input(f"< CH{self.canalAtual} >\t - VOL{self.volumeAtual} + ")))
+        self.botoes_controle(str(input(f"< CH{self.canal_atual} >\t - VOL{self.volume_atual} + ")))
         self.hud_tv()
 
 

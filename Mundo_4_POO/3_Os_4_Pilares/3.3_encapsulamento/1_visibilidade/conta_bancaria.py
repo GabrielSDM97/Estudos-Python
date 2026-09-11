@@ -1,7 +1,7 @@
 class ContaBancaria:
-    def __init__(self, numeroConta: int, titular: str, saldo: float):
+    def __init__(self, numero_conta: int, titular: str, saldo: float):
         # Tipos de visibilidade
-        self.id: int = numeroConta  # Público (+)
+        self.id: int = numero_conta  # Público (+)
         self._titular: str = titular  # Protegido (#)
         self.__saldo: float = saldo  # Privado (-)
 

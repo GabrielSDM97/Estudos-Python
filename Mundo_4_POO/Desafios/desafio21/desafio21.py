@@ -21,9 +21,9 @@ class Caneta:
         self.destampada = True
 
     def escrever(self, conteudo:str=" ") -> None:
-        destamparAviso = f"\nDestampe a [{self.cor}]caneta[/] primeiro!\n"
+        destampar_aviso = f"\nDestampe a [{self.cor}]caneta[/] primeiro!\n"
         texto = f"[{self.cor}]{conteudo}[/]"
-        print(destamparAviso if self.destampada == False else texto, end="")
+        print(destampar_aviso if self.destampada == False else texto, end="")
 
     def quebrar_linha(self, quebras:int=1) -> None:
         print(quebras * "\n", end="")

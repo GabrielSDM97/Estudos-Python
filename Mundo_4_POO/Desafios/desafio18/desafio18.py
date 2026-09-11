@@ -14,8 +14,8 @@ install()
 
 
 class Churrasco:
-    precoKG: float = 82.4
-    consumoPessoaKG: float = 0.4
+    preco_kg: float = 82.4
+    consumo_pessoa_kg: float = 0.4
 
     def __init__(self, titulo: str = " ", convidados: int = 0):
         self.titulo: str = titulo
@@ -25,17 +25,17 @@ class Churrasco:
         return f"Calcula despezas do churrasco {self.titulo} com {self.convidados} convidados!"
 
     def peso_carne(self) -> float:
-        return self.convidados * Churrasco.consumoPessoaKG
+        return self.convidados * Churrasco.consumo_pessoa_kg
 
     def custo_total(self) -> float:
-        return self.peso_carne() * Churrasco.precoKG
+        return self.peso_carne() * Churrasco.preco_kg
 
     def preco_por_pessoa(self) -> float:
         return self.custo_total() / self.convidados
 
     def analise(self) -> None:
         conteudo = f"Analisando [chartreuse1]{self.titulo}[/] com [bright_cyan]{self.convidados} convidados[/].\n"
-        conteudo += f"Cada participante comerá [yellow]{Churrasco.consumoPessoaKG}KG[/] e cada KG custa [yellow]R${Churrasco.precoKG}[/].\n"
+        conteudo += f"Cada participante comerá [yellow]{Churrasco.consumo_pessoa_kg}KG[/] e cada KG custa [yellow]R${Churrasco.preco_kg}[/].\n"
         conteudo += f"Recomendo comprar [orange4]{self.peso_carne():,.2f}KG[/] de carne.\n"
         conteudo += f"O custo total será de [red]R${self.custo_total():,.2f}[/].\n"
         conteudo += f"Cada pessoa pagará [green]R${self.preco_por_pessoa():,.2f}[/] para participar.\n"

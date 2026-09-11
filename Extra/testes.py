@@ -42,3 +42,6 @@ def teste():
     return bool(1 == 2)
 
 print(teste)
+
+a = 2; b = 3; c = 1
+print(c)

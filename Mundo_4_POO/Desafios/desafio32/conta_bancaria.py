@@ -16,8 +16,8 @@ class ContaBancaria:
         return f"Saldo atual da conta {self._id}: R${self.__saldo:,.2f}"
 
     def validar_senha(self, chave: str) -> bool:
-        hashChave = sha256(chave.encode("utf-8")).hexdigest()
-        return bool(hashChave == self.__hash)
+        hash_chave = sha256(chave.encode("utf-8")).hexdigest()
+        return bool(hash_chave == self.__hash)
 
     def pede_senha(self) -> str:
         from pwinput import pwinput

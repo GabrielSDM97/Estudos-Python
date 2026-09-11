@@ -13,8 +13,8 @@ class Diario:
 
     @senha.setter
     def senha(self, senha):
-        validarSenha = str(input("Senha antiga: ")).strip()
-        if validarSenha != self.__senha:
+        validar_senha = str(input("Senha antiga: ")).strip()
+        if validar_senha != self.__senha:
             raise PermissionError("Senha inválida!")
         self.__senha = senha
 

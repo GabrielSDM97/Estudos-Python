@@ -66,7 +66,7 @@ print(f'6. {cadastro} --- {nome}')
 
 dicionário = {'A': 1, 'B': 5, 'C': 2, 'D': 4, 'E': 3}
 
-''' A função 'sorted()', além de sortear, transforma um dicionário e suas chaves em uma lista com tuplas.
+''' A função 'sorted()', além de sortear, transforma um dicionário e seus pares de chave-valor em uma lista com tuplas.
 Para organizar essas tuplas, utilizei a função anônima lambda. Para mais detalhes, veja a aula "15.3_sorted.py" e "15.4_lambda.py".
 Abaixo configurei para que a organização ocorresse baseada no tipo de valor da posição 1 das tuplas da lista 'dicionário', ou seja, baseada em ordem numérica. '''
 organizado = sorted(dicionário.items(), key=lambda posição: posição[1], reverse=True)

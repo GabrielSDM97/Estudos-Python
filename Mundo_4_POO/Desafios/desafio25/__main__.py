@@ -9,18 +9,18 @@ def main():
     
     while True:
         system("clear")
-        tabelaEntregas = Table(title="Tabela de entregas")
+        tabela_entregas = Table(title="Tabela de entregas")
         dist = float(input("Distância: "))
 
-        listaViagens = [Moto(dist), Caminhao(dist), Drone(dist)]
+        lista_viagens = [Moto(dist), Caminhao(dist), Drone(dist)]
         
-        tabelaEntregas.add_column("Distância", justify="left")
-        tabelaEntregas.add_column("Tipo", justify="left")
-        tabelaEntregas.add_column("Frete", justify="left")
+        tabela_entregas.add_column("Distância", justify="left")
+        tabela_entregas.add_column("Tipo", justify="left")
+        tabela_entregas.add_column("Frete", justify="left")
 
-        for viagem in listaViagens:
-            tabelaEntregas.add_row(f"[yellow bold]{dist}KM[/]", f"[bold]{viagem.__class__.__name__}[/]", f"{viagem.calc_frete()}")
-        print(tabelaEntregas)
+        for viagem in lista_viagens:
+            tabela_entregas.add_row(f"[yellow bold]{dist}KM[/]", f"[bold]{viagem.__class__.__name__}[/]", f"{viagem.calc_frete()}")
+        print(tabela_entregas)
 
         continuar = str(input("Deseja verificar uma nova distância? [S/N] "))
         if continuar in "Nn": break
